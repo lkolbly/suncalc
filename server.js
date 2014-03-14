@@ -70,9 +70,13 @@ function renderPdf(dates, cb) {
     // Draw the dots
 
     //doc.circle(centerx,centery,0.1*72).stroke();
-    doc.rect(centerx-0.25*72,centery-0.25*72,0.5*72,0.5*72).stroke();
+    //doc.rect(centerx-0.25*72,centery-0.25*72,0.5*72,0.5*72).stroke();
+    doc.moveTo(centerx-0.5*72,centery)
+	.lineTo(centerx,centery)
+	.lineTo(centerx,centery-0.5*72)
+	.stroke();
 
-    doc.text("3 inch spire", centerx+0.3*72, centery);
+    doc.text("3 inch spire", centerx+0.05*72, centery-0.1*72);
     for (var i=0; i<dates.length; i++) {
 	//now.setMonth(i);
 	now = new Date(dates[i].year, dates[i].month, dates[i].day, 12, 0,0,0);
@@ -131,14 +135,22 @@ function renderPdf(dates, cb) {
     var peaky = 6*72;
     doc.moveTo(peakx,peaky)
 	.lineTo(peakx+0.5*72,peaky+3*72)
+	.lineTo(peakx+0.5*72, peaky+3.5*72)
+	.lineTo(peakx-0.5*72, peaky+3.5*72)
+	.lineTo(peakx-0.5*72, peaky+3*72)
+	.lineTo(peakx, peaky+3*72)
 	.lineTo(peakx-0.5*72,peaky+3*72)
 	.lineTo(peakx,peaky)
 	.stroke();
     doc.moveTo(peakx,peaky)
 	.lineTo(peakx,peaky+3*72)
+	.lineTo(peakx+0.5*72, peaky+3*72)
+	.moveTo(peakx,peaky+3*72)
+	.lineTo(peakx,peaky+3.5*72)
 	.dash(5)
 	.stroke();
     doc.text("Cut & fold for 3 inch spire", peakx+0.5*72, peaky);
+    doc.text("Cut along solid, fold along dotted", peakx+0.5*72, peaky+1*72);
 
     /*
     doc.circle(centerx,centery,10).stroke();
