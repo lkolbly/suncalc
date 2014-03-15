@@ -3,24 +3,26 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.9.1.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
     <script src="main.js"></script>
   </head>
   <body>
     <h3>Welcome to the Solar Calender</h3>
-    <em>Add a marker to get started. (Or pick a
+    <em>Enter your location and add a marker to get started. (Or pick a
       <select id="example-calenders">
 	<option value="default">sample calender</option>
 	<option value="months">months</option>
 	<option value="holidays">national holidays</option>
       </select>)</em>
+    <br/>Latitude: <input type="text" id="latitude"/> Longitude (+ is East): <input type="text" id="longitude"/><br/>
     <table id="days">
       <tr><td>Date</td><td>Time</td><td>Custom Text</td></tr>
     </table>
     <button id="add-day">Add Marker</button><br/>
     <button id="submit">Submit</button>
     <div id="result"></div>
-
     <hr/>
+    <small><i><a href="http://www.geoplugin.com/geolocation/" target="_new">IP Geolocation</a> by <a href="http://www.geoplugin.com/" target="_new">geoPlugin</a></i></small>
     <small><i> <a href="//pillow.rscheme.org">Proudly Pillow Powered</a>.</i><a href="//pillow.rscheme.org"><img src="logo.png" width="50" height="30" align="middle" border="0"></a><i> Copyright(c) 2014 by Lane Kolbly</i>
     </small>
   </body>

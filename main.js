@@ -1,6 +1,10 @@
 $(function() {
+    // Set the default lat/long
+    $("#latitude").val(geoplugin_latitude());
+    $("#longitude").val(geoplugin_longitude());
+
     function add(date, hour, customtext) {
-	date = date||"04/28/1995";
+	date = date||"04/28/2014";
 	customtext = customtext||"";
 	var hour_picker = "<select id='hourpicker-"+num_days+"'>";
 	hour_picker += "<option value='-1'>Solar Noon</option>";
@@ -57,7 +61,7 @@ $(function() {
 	    add("10/31/2014", 12, "Noon on Halloween");
 	    add("12/25/2014", 12, "Noon on Christmas");
 	} else {
-	    add("04/28/1995");
+	    add("04/28/2014");
 	}
     });
 
@@ -88,7 +92,8 @@ $(function() {
 	    url: "genpdf",
 	    method: "POST",
 	    dataType: "json",
-	    data: {data: dates},
+	    data: {data: dates, latitude: parseFloat($("#latitude").val()),
+		  longitude: parseFloat($("#longitude").val())},
 	    error: function(jqXHR, textStatus, errorThrown) {
 		console.log("error");
 		console.log(errorThrown);
