@@ -9,7 +9,7 @@ RUN apt-get update \
     && apt-get install -y curl python python-pip \
     && curl -sL https://deb.nodesource.com/setup_7.x -o nodesetup.sh \
     && /bin/bash nodesetup.sh \
-    && apt-get install -y nodejs
+    && apt-get install -y nodejs git
 
 EXPOSE 9020
 

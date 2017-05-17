@@ -7,7 +7,7 @@ var MongoDb = require('mongodb');
 var MongoClient = MongoDb.MongoClient;
 
 var DB = null;
-MongoClient.connect("mongodb://localhost:27017/solar", function(err,db) {
+MongoClient.connect("mongodb://mongo/solar", function(err,db) {
     console.log("Connected!");
     DB = db;
 });
@@ -26,7 +26,7 @@ function renderPdf(dates, loc, cb) {
 	return {x: x, y: y};
     }
 
-    var now = new Date(2014,1,1,12,0,0,0);
+    var now = new Date(2017,5,16,12,0,0,0);
 
     var times = SunCalc.getTimes(now, loc.lat, loc.lon);
 
@@ -96,7 +96,7 @@ function renderPdf(dates, loc, cb) {
 	    txt = dates[i].customText;
 	}
 
-	doc.text("  "+txt, p.x,p.y);
+	//doc.text("  "+txt, p.x,p.y);
     }
 
     // Draw the cone
