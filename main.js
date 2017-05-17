@@ -4,7 +4,7 @@ $(function() {
     $("#longitude").val(geoplugin_longitude());
 
     function add(date, hour, customtext) {
-	date = date||"04/28/2014";
+	date = date||"04/28/2017";
 	customtext = customtext||"";
 	var hour_picker = "<select id='hourpicker-"+num_days+"'>";
 	hour_picker += "<option value='-1'>Solar Noon</option>";
@@ -41,27 +41,27 @@ $(function() {
 	deletion_record = [];
 
 	if ($("#example-calenders").val() === "months") {
-	    add("01/01/2014", 12);
-	    add("02/01/2014", 12);
-	    add("03/01/2014", 12);
-	    add("04/01/2014", 12);
-	    add("05/01/2014", 12);
-	    add("06/01/2014", 12);
-	    add("07/01/2014", 12);
-	    add("08/01/2014", 12);
-	    add("09/01/2014", 12);
-	    add("10/01/2014", 12);
-	    add("11/01/2014", 12);
-	    add("12/01/2014", 12);
+	    add("01/01/2017", 12);
+	    add("02/01/2017", 12);
+	    add("03/01/2017", 12);
+	    add("04/01/2017", 12);
+	    add("05/01/2017", 12);
+	    add("06/01/2017", 12);
+	    add("07/01/2017", 12);
+	    add("08/01/2017", 12);
+	    add("09/01/2017", 12);
+	    add("10/01/2017", 12);
+	    add("11/01/2017", 12);
+	    add("12/01/2017", 12);
 	} else if ($("#example-calenders").val() === "holidays") {
-	    add("01/01/2014", 12, "Noon on New Year's");
-	    add("02/14/2014", 12, "Noon on Valentine's");
-	    add("05/05/2014", 12, "Noon on Cinco de Mayo");
-	    add("07/04/2014", 12, "Noon on July 4th");
-	    add("10/31/2014", 12, "Noon on Halloween");
-	    add("12/25/2014", 12, "Noon on Christmas");
+	    add("01/01/2017", 12, "Noon on New Year's");
+	    add("02/14/2017", 12, "Noon on Valentine's");
+	    add("05/05/2017", 12, "Noon on Cinco de Mayo");
+	    add("07/04/2017", 12, "Noon on July 4th");
+	    add("10/31/2017", 12, "Noon on Halloween");
+	    add("12/25/2017", 12, "Noon on Christmas");
 	} else {
-	    add("04/28/2014");
+	    add("04/28/2017");
 	}
     });
 
