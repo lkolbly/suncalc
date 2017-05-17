@@ -5,6 +5,8 @@ var express = require('express');
 var uuid = require('node-uuid');
 var MongoDb = require('mongodb');
 var MongoClient = MongoDb.MongoClient;
+var tzwhere = require('tzwhere');
+tzwhere.init();
 
 var DB = null;
 MongoClient.connect("mongodb://mongo/solar", function(err,db) {
@@ -83,7 +85,8 @@ function renderPdf(dates, loc, cb) {
 //	    p = getFloorPos(times.solarNoon);
 	    now = times.solarNoon;
 	} else {
-	    now.setHours(dates[i].hour);
+	    var tz_offset = tzwhere.tzOffsetAt(loc.lat, loc.lon);
+	    now.setHours(dates[i].hour - tz_offset / 3600.0);
 	}
 	p = getFloorPos(now);
 	//console.log(now+": "+p.x+","+p.y);
